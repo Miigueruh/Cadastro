@@ -35,13 +35,15 @@
             label5 = new Label();
             label6 = new Label();
             label9 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            lucro = new TextBox();
+            aquisicao = new TextBox();
+            descricao = new TextBox();
+            codigo = new TextBox();
             button1 = new Button();
             button2 = new Button();
             valorFinal = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -112,33 +114,34 @@
             label9.Size = new Size(0, 15);
             label9.TabIndex = 8;
             // 
-            // textBox1
+            // lucro
             // 
-            textBox1.Location = new Point(256, 199);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 11;
+            lucro.Location = new Point(256, 199);
+            lucro.Name = "lucro";
+            lucro.Size = new Size(100, 23);
+            lucro.TabIndex = 11;
             // 
-            // textBox2
+            // aquisicao
             // 
-            textBox2.Location = new Point(215, 155);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(141, 23);
-            textBox2.TabIndex = 12;
+            aquisicao.Location = new Point(215, 155);
+            aquisicao.Name = "aquisicao";
+            aquisicao.Size = new Size(141, 23);
+            aquisicao.TabIndex = 12;
             // 
-            // textBox3
+            // descricao
             // 
-            textBox3.Location = new Point(144, 112);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(212, 23);
-            textBox3.TabIndex = 13;
+            descricao.Location = new Point(144, 112);
+            descricao.Name = "descricao";
+            descricao.Size = new Size(212, 23);
+            descricao.TabIndex = 13;
             // 
-            // textBox4
+            // codigo
             // 
-            textBox4.Location = new Point(144, 68);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(212, 23);
-            textBox4.TabIndex = 14;
+            codigo.Location = new Point(144, 68);
+            codigo.Name = "codigo";
+            codigo.Size = new Size(212, 23);
+            codigo.TabIndex = 14;
+            codigo.TextChanged += textBox4_TextChanged;
             // 
             // button1
             // 
@@ -172,18 +175,28 @@
             valorFinal.TabIndex = 18;
             valorFinal.Text = "lorem";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(51, 319);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(570, 150);
+            dataGridView1.TabIndex = 19;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(633, 508);
+            Controls.Add(dataGridView1);
             Controls.Add(valorFinal);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(codigo);
+            Controls.Add(descricao);
+            Controls.Add(aquisicao);
+            Controls.Add(lucro);
             Controls.Add(label9);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -194,6 +207,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,12 +221,13 @@
         private Label label5;
         private Label label6;
         private Label label9;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox lucro;
+        private TextBox aquisicao;
+        private TextBox descricao;
+        private TextBox codigo;
         private Button button1;
         private Button button2;
         private Label valorFinal;
+        private DataGridView dataGridView1;
     }
 }

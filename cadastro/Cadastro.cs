@@ -1,15 +1,24 @@
 ﻿public class Cadastro
 {
+    public string Id { get; set; }
+    public string Descricao { get; set; }
+    public double PrecoAquisicao { get; set; }
+    public double Lucro { get; set; }
+    public double PrecoVenda { get; set; }
 
-    public double precoAquisicao { get; set; }
-    public double porcentagemVenda { get; set; }
-    public double valorVenda { get; set; }
-
-    public double Cadastrar(double precoAquisicao, double porcentagemVenda, double valorVenda)
-    {
+    public Cadastro() 
+    { 
         
-        porcentagemVenda = precoAquisicao / 100;
-        valorVenda = precoAquisicao + (porcentagemVenda * 5);
-        return valorVenda;
     }
+
+    public Cadastro(string id, string descricao, double PrecoAquisicao, double lucro, double PrecoVenda)
+    {
+        this.Id = id;
+        this.Descricao = descricao;
+        this.PrecoVenda = PrecoVenda;
+        this.PrecoAquisicao = PrecoAquisicao;
+        this.Lucro = lucro;
+    }
+    
+
 }

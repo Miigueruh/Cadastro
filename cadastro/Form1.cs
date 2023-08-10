@@ -2,6 +2,7 @@ namespace cadastro
 {
     public partial class Form1 : Form
     {
+        List<Cadastro> lista = new List<Cadastro>();
         public Form1()
         {
             InitializeComponent();
@@ -15,29 +16,36 @@ namespace cadastro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string> lista = new List<string>();
-
-
-
-            double aquisicao = Convert.ToDouble(textBox2.Text);
-            double lucro = Convert.ToDouble(textBox1.Text);
-            double venda = 0;
 
             Cadastro c = new Cadastro();
+            c.Id = codigo.Text;
+            c.Descricao = descricao.Text;
+            c.PrecoAquisicao = Convert.ToDouble(aquisicao.Text);
+            c.Lucro = Convert.ToDouble(lucro.Text);
+            c.PrecoVenda = (c.PrecoAquisicao * c.Lucro / 100) + c.PrecoAquisicao;
+            valorFinal.Text = c.PrecoVenda.ToString();
 
-            c.Cadastrar(aquisicao, lucro, venda);
-            valorFinal.Text = venda.ToString();
+            lista.Add(c);
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = lista;
 
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
+            lucro.Text = "";
+            aquisicao.Text = "";
+            descricao.Text = "";
+            codigo.Text = "";
             valorFinal.Text = "";
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
