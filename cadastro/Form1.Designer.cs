@@ -43,6 +43,7 @@
             button2 = new Button();
             valorFinal = new Label();
             dataGridView1 = new DataGridView();
+            remover = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -184,11 +185,23 @@
             dataGridView1.Size = new Size(570, 150);
             dataGridView1.TabIndex = 19;
             // 
+            // remover
+            // 
+            remover.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            remover.Location = new Point(444, 276);
+            remover.Name = "remover";
+            remover.Size = new Size(75, 23);
+            remover.TabIndex = 20;
+            remover.Text = "Remover";
+            remover.UseVisualStyleBackColor = true;
+            remover.Click += remover_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(633, 508);
+            Controls.Add(remover);
             Controls.Add(dataGridView1);
             Controls.Add(valorFinal);
             Controls.Add(button2);
@@ -229,5 +242,6 @@
         private Button button2;
         private Label valorFinal;
         private DataGridView dataGridView1;
+        private Button remover;
     }
 }

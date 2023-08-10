@@ -47,5 +47,15 @@ namespace cadastro
         {
 
         }
+
+        private void remover_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.CurrentCell.RowIndex;
+            lista.RemoveAt(index);
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = lista;
+        }
     }
 }
